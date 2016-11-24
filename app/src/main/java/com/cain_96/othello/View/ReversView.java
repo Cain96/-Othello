@@ -24,11 +24,16 @@ public class ReversView extends View {
     private Bitmap IMG_WHITE = BitmapFactory.decodeResource(res, R.drawable.white);
     private Bitmap IMG_LIGHT = BitmapFactory.decodeResource(res, R.drawable.light);
 
+    private final int TITLE = 0;
     private final int PLAYER = 1;
     private final int CPU = 2;
-    private int turn;
+    private final int REVERS = 3;
+    private final int PASS = 4;
+    private final int RESULT = 5;
+    private int turn = PLAYER;
 
     private int[][] board = new int[10][10];
+    private int page = TITLE;
 
     private MainProcess mProcess = new MainProcess();
 
@@ -56,6 +61,30 @@ public class ReversView extends View {
                     c.drawBitmap(IMG_WHITE, 108 * j, 108 * i, mPaint);
                 }
             }
+        }
+
+        switch (page) {
+            case TITLE:  //初期化
+
+                break;
+            case PLAYER:
+
+                invalidate();
+                break;
+            case CPU:
+
+                invalidate();
+                break;
+            case REVERS:
+
+                invalidate();
+                break;
+            case PASS:
+
+                invalidate();
+                break;
+            case RESULT:
+                break;
         }
     }
 
